@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "ACROCase dictionary of web platform acronyms and abbreviations",
+  "acronyms": {
+    "API": {
+      "expansion": "Application Programming Interface",
+      "examples": {
+        "acroCase": ["restAPI", "apiKey"],
+        "UpperACROCase": ["APIRequest", "APIResponse"]
+      }
+    },
+    "ASCII": {
+      "expansion": "American Standard Code for Information Interchange",
+      "examples": {
+        "acroCase": ["asciiArt", "toASCII"],
+        "UpperACROCase": ["ASCIIEncoder"]
+      }
+    },
+    "CORS": {
+      "expansion": "Cross-Origin Resource Sharing",
+      "examples": {
+        "acroCase": ["corsHeaders", "enableCORS"],
+        "UpperACROCase": ["CORSMiddleware"]
+      }
+    },
+    "CSS": {
+      "expansion": "Cascading Style Sheets",
+      "webPlatform": ["CSSStyleSheet", "CSSRule", "CSS.supports()"],
+      "examples": {
+        "acroCase": ["cssText", "inlineCSS"],
+        "UpperACROCase": ["CSSStyleSheet", "CSSParser"]
+      }
+    },
+    "DOM": {
+      "expansion": "Document Object Model",
+      "webPlatform": ["DOMParser", "DOMString", "DOMRect", "DOMException"],
+      "examples": {
+        "acroCase": ["domNode", "virtualDOM"],
+        "UpperACROCase": ["DOMParser", "DOMElement"]
+      }
+    },
+    "EOF": {
+      "expansion": "End of File",
+      "examples": {
+        "acroCase": ["eofMarker", "reachedEOF"],
+        "UpperACROCase": ["EOFException"]
+      }
+    },
+    "GPU": {
+      "expansion": "Graphics Processing Unit",
+      "webPlatform": ["GPU", "GPUDevice", "GPUBuffer"],
+      "examples": {
+        "acroCase": ["gpuMemory", "useGPU"],
+        "UpperACROCase": ["GPUDevice", "GPUAdapter"]
+      }
+    },
+    "HTML": {
+      "expansion": "HyperText Markup Language",
+      "webPlatform": ["HTMLElement", "HTMLCollection", "innerHTML", "outerHTML"],
+      "examples": {
+        "acroCase": ["htmlString", "innerHTML"],
+        "UpperACROCase": ["HTMLElement", "HTMLParser"]
+      }
+    },
+    "HTTP": {
+      "expansion": "HyperText Transfer Protocol",
+      "examples": {
+        "acroCase": ["httpRequest", "sendHTTP"],
+        "UpperACROCase": ["HTTPClient", "HTTPServer"]
+      }
+    },
+    "HTTPS": {
+      "expansion": "HyperText Transfer Protocol Secure",
+      "examples": {
+        "acroCase": ["httpsOnly", "useHTTPS"],
+        "UpperACROCase": ["HTTPSServer"]
+      }
+    },
+    "JSON": {
+      "expansion": "JavaScript Object Notation",
+      "webPlatform": ["JSON.parse()", "JSON.stringify()", "toJSON"],
+      "examples": {
+        "acroCase": ["jsonString", "toJSON"],
+        "UpperACROCase": ["JSONParser", "JSONResponse"]
+      }
+    },
+    "MIME": {
+      "expansion": "Multipurpose Internet Mail Extensions",
+      "webPlatform": ["MIMEType"],
+      "examples": {
+        "acroCase": ["mimeType", "parseMIME"],
+        "UpperACROCase": ["MIMEType", "MIMEParser"]
+      }
+    },
+    "PDF": {
+      "expansion": "Portable Document Format",
+      "examples": {
+        "acroCase": ["pdfData", "generatePDF"],
+        "UpperACROCase": ["PDFDocument", "PDFViewer"]
+      }
+    },
+    "PNG": {
+      "expansion": "Portable Network Graphics",
+      "examples": {
+        "acroCase": ["pngData", "toPNG"],
+        "UpperACROCase": ["PNGEncoder"]
+      }
+    },
+    "RGB": {
+      "expansion": "Red Green Blue",
+      "examples": {
+        "acroCase": ["rgbValue", "toRGB"],
+        "UpperACROCase": ["RGBColor"]
+      }
+    },
+    "RGBA": {
+      "expansion": "Red Green Blue Alpha",
+      "examples": {
+        "acroCase": ["rgbaValue", "toRGBA"],
+        "UpperACROCase": ["RGBAColor"]
+      }
+    },
+    "RTC": {
+      "expansion": "Real-Time Communication",
+      "webPlatform": ["RTCPeerConnection", "RTCDataChannel"],
+      "examples": {
+        "acroCase": ["rtcConnection", "setupRTC"],
+        "UpperACROCase": ["RTCPeerConnection"]
+      }
+    },
+    "SQL": {
+      "expansion": "Structured Query Language",
+      "examples": {
+        "acroCase": ["sqlQuery", "executeSQL"],
+        "UpperACROCase": ["SQLDatabase", "SQLStatement"]
+      }
+    },
+    "SSL": {
+      "expansion": "Secure Sockets Layer",
+      "examples": {
+        "acroCase": ["sslCert", "useSSL"],
+        "UpperACROCase": ["SSLCertificate"]
+      }
+    },
+    "SVG": {
+      "expansion": "Scalable Vector Graphics",
+      "webPlatform": ["SVGElement", "SVGRect", "SVGPathElement"],
+      "examples": {
+        "acroCase": ["svgData", "toSVG"],
+        "UpperACROCase": ["SVGElement", "SVGParser"]
+      }
+    },
+    "TCP": {
+      "expansion": "Transmission Control Protocol",
+      "examples": {
+        "acroCase": ["tcpSocket", "openTCP"],
+        "UpperACROCase": ["TCPConnection"]
+      }
+    },
+    "TLS": {
+      "expansion": "Transport Layer Security",
+      "examples": {
+        "acroCase": ["tlsVersion", "useTLS"],
+        "UpperACROCase": ["TLSSocket"]
+      }
+    },
+    "UDP": {
+      "expansion": "User Datagram Protocol",
+      "examples": {
+        "acroCase": ["udpSocket", "sendUDP"],
+        "UpperACROCase": ["UDPSocket"]
+      }
+    },
+    "UI": {
+      "expansion": "User Interface",
+      "examples": {
+        "acroCase": ["uiComponent", "updateUI"],
+        "UpperACROCase": ["UIElement", "UIManager"]
+      }
+    },
+    "URI": {
+      "expansion": "Uniform Resource Identifier",
+      "webPlatform": ["encodeURI", "decodeURI", "encodeURIComponent", "decodeURIComponent"],
+      "examples": {
+        "acroCase": ["uriString", "encodeURI"],
+        "UpperACROCase": ["URIParser"]
+      }
+    },
+    "URL": {
+      "expansion": "Uniform Resource Locator",
+      "webPlatform": ["URL", "URLSearchParams", "createObjectURL"],
+      "examples": {
+        "acroCase": ["urlString", "imageURL"],
+        "UpperACROCase": ["URLParser", "URLSearchParams"]
+      }
+    },
+    "USB": {
+      "expansion": "Universal Serial Bus",
+      "webPlatform": ["USB", "USBDevice"],
+      "examples": {
+        "acroCase": ["usbDevice", "connectUSB"],
+        "UpperACROCase": ["USBDevice", "USBConnection"]
+      }
+    },
+    "UTF": {
+      "expansion": "Unicode Transformation Format",
+      "examples": {
+        "acroCase": ["utfEncoding", "toUTF8"],
+        "UpperACROCase": ["UTF8Encoder"]
+      }
+    },
+    "UUID": {
+      "expansion": "Universally Unique Identifier",
+      "examples": {
+        "acroCase": ["uuidString", "generateUUID"],
+        "UpperACROCase": ["UUIDGenerator"]
+      }
+    },
+    "WebGL": {
+      "expansion": "Web Graphics Library",
+      "webPlatform": ["WebGLRenderingContext", "WebGL2RenderingContext"],
+      "note": "GL portion stays uppercase",
+      "examples": {
+        "acroCase": ["webglContext"],
+        "UpperACROCase": ["WebGLRenderingContext"]
+      }
+    },
+    "XHR": {
+      "expansion": "XMLHttpRequest",
+      "webPlatform": ["XMLHttpRequest"],
+      "note": "Abbreviation of XMLHttpRequest",
+      "examples": {
+        "acroCase": ["xhrRequest", "sendXHR"],
+        "UpperACROCase": ["XHRWrapper"]
+      }
+    },
+    "XML": {
+      "expansion": "Extensible Markup Language",
+      "webPlatform": ["XMLDocument", "XMLSerializer", "XMLHttpRequest"],
+      "examples": {
+        "acroCase": ["xmlData", "parseXML"],
+        "UpperACROCase": ["XMLDocument", "XMLParser"]
+      }
+    },
+    "XSS": {
+      "expansion": "Cross-Site Scripting",
+      "examples": {
+        "acroCase": ["xssFilter", "preventXSS"],
+        "UpperACROCase": ["XSSProtection"]
+      }
+    }
+  },
+  "exceptions": {
+    "Id": {
+      "instead_of": "ID",
+      "expansion": "Identifier",
+      "reason": "Web platform convention",
+      "webPlatform": ["getElementById", "elementId", "clientId", "requestId"],
+      "examples": {
+        "acroCase": ["userId", "idString"],
+        "UpperACROCase": ["UserId"]
+      }
+    },
+    "Intl": {
+      "instead_of": "INTL",
+      "expansion": "Internationalization",
+      "reason": "Web platform convention",
+      "webPlatform": ["Intl", "Intl.DateTimeFormat", "Intl.NumberFormat"],
+      "examples": {
+        "acroCase": ["intlFormat"],
+        "UpperACROCase": ["IntlProvider"]
+      }
+    }
+  },
+  "avoidChaining": {
+    "description": "Avoid placing acronyms adjacent to each other",
+    "bad": ["XMLHTTPRequest", "ABORTURI", "HTMLURL"],
+    "good": ["XMLHttpRequest", "abortURI", "htmlURL"],
+    "note": "XMLHttpRequest is a legacy exception; prefer restructuring in new code"
+  }
+}

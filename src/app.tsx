@@ -1,12 +1,12 @@
-/** @jsxImportSource @b9g/crank */
 import {Router} from "@b9g/router";
 import {renderer} from "@b9g/crank/html";
+import {type Element} from "@b9g/crank";
 import {HomePage} from "./pages/home";
 
 const router = new Router();
 
 async function htmlResponse(element: unknown): Promise<Response> {
-	const html = await renderer.render(element);
+	const html = await renderer.render(element as Element);
 	return new Response(`<!DOCTYPE html>${html}`, {
 		headers: {"Content-Type": "text/html; charset=utf-8"},
 	});
