@@ -24,3 +24,31 @@ declare const self: ServiceWorkerGlobalScope;
 self.addEventListener("fetch", (event) => {
 	event.respondWith(router.handle(event.request));
 });
+
+// ServiceWorker install event for static site generation
+self.addEventListener("install", (event) => {
+	event.waitUntil(generateStaticSite());
+});
+
+async function generateStaticSite() {
+	if (import.meta.env.MODE !== "production") {
+		return;
+	}
+
+	const staticBucket = await self.directories.open("public");
+
+	const routes = ["/"];
+	for (const route of routes) {
+		const response = await fetch(route);
+		if (response.ok) {
+			const content = await response.text();
+			const filePath = route === "/" ? "index.html" : `${route.slice(1)}/index.html`;
+			const fileHandle = await staticBucket.getFileHandle(filePath, {
+				create: true,
+			});
+			const writable = await fileHandle.createWritable();
+			await writable.write(content);
+			await writable.close();
+		}
+	}
+}

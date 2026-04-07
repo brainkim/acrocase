@@ -4,9 +4,11 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "shovel develop src/app.tsx --platform bun",
-    "build": "shovel build src/app.tsx --platform bun",
-    "start": "node dist/server/supervisor.js"
+    "develop": "shovel develop src/app.tsx --platform bun",
+    "static": "MODE=production shovel build src/app.tsx --platform bun --lifecycle",
+    "predeploy": "npm run static",
+    "deploy": "gh-pages -d dist/public --nojekyll --cname acrocase.org",
+    "preview": "bun run static && bunx serve dist/public"
   },
   "dependencies": {
     "@b9g/cache": "^0.2.0",
@@ -17,6 +19,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.0.0"
   }
 }

@@ -123,7 +123,7 @@ module.exports = {
       description: "Enforce ACROCase naming conventions for acronyms",
       category: "Stylistic Issues",
       recommended: true,
-      url: "https://acrocase.dev",
+      url: "https://acrocase.org",
     },
     fixable: "code",
     schema: [

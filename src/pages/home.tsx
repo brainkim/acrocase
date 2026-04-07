@@ -1,4 +1,3 @@
-/** @jsxImportSource @b9g/crank */
 export function HomePage() {
 	return (
 		<html lang="en">
@@ -163,9 +162,8 @@ export function HomePage() {
 
 					<h2>The Problem</h2>
 					<p>
-						When writing code, you'll encounter acronyms: HTTP, URL, XML, API, HTML, ID, and countless others. How should these appear in identifiers that use camelCase or PascalCase?
+						How should acronyms like HTTP, URL, and JSON appear in camelCase and PascalCase identifiers?
 					</p>
-					<p>Consider a variable that holds an HTTP URL. Should it be:</p>
 					<div class="comparison">
 						<div class="do">
 							<h4>acroCase</h4>
@@ -258,18 +256,18 @@ export function HomePage() {
 						<li><code>XMLDocument</code>, <code>HTMLElement</code></li>
 					</ul>
 
-					<h3>3. Clear Word Boundaries</h3>
+					<h3>3. Acronyms Are Not Words</h3>
 					<p>
-						The case change clearly marks where words begin and end:
+						Treating acronyms as words loses information. <code>URL</code> is an acronym; <code>Url</code> is nothing.
 					</p>
 					<div class="comparison">
 						<div class="do">
-							<h4>Clear boundary</h4>
-							<code>requestURL</code> → request + URL
+							<h4>Preserved</h4>
+							<code>parseURL</code>, <code>HTMLElement</code>
 						</div>
 						<div class="dont">
-							<h4>Ambiguous</h4>
-							<code>requestUrl</code> → request + Url?
+							<h4>Lost</h4>
+							<code>parseUrl</code>, <code>HtmlElement</code>
 						</div>
 					</div>
 
@@ -437,9 +435,34 @@ export function HomePage() {
 						The plugin is auto-fixable. Run <code>eslint --fix</code> to automatically correct violations.
 					</p>
 
+					<h3>With existing ESLint casing rules</h3>
+					<p>
+						ESLint's built-in <code>camelcase</code> rule and <code>@typescript-eslint/naming-convention</code> enforce lowercase acronyms by default. To use ACROCase, disable their acronym handling:
+					</p>
+					<pre><code>{`{
+  "rules": {
+    // Disable the built-in camelcase rule
+    "camelcase": "off",
+    // Or with @typescript-eslint, allow uppercase acronyms
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["camelCase", "PascalCase"],
+        "filter": {
+          "regex": "^(HTTP|URL|HTML|JSON|XML|API|CSS|DOM|URI|SVG|SQL|UUID).*|.*(HTTP|URL|HTML|JSON|XML|API|CSS|DOM|URI|SVG|SQL|UUID)$",
+          "match": false
+        }
+      }
+    ],
+    // Then let acrocase handle acronym casing
+    "acrocase/acrocase": "error"
+  }
+}`}</code></pre>
+
 					<h2>Dictionary</h2>
 					<p>
-						A machine-readable <a href="https://github.com/user/acrocase/blob/main/dictionary.json">dictionary.json</a> is available with all recognized acronyms, exceptions, and examples.
+						A machine-readable <a href="https://github.com/brainkim/acrocase/blob/main/dictionary.json">dictionary.json</a> is available with all recognized acronyms, exceptions, and examples.
 					</p>
 
 					<h2>Summary</h2>
