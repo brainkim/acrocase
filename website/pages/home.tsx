@@ -307,15 +307,10 @@ export function HomePage() {
 
 					<h3>XMLHttpRequest</h3>
 					<p>
-						The most famous API on the web gets its own acronyms wrong.
-						<code>XML</code> is uppercase, but <code>Http</code> is titlecased.
-						By the web platform's own rules, it should be <code>XMLHTTPRequest</code>.
-					</p>
-					<p>
-						But read <code>XMLHTTP</code> out loud. Where does <code>XML</code> end and <code>HTTP</code> begin?
-						This is the original sin of acronym chaining: two uppercase acronyms next to each other
-						produce an unreadable wall of capitals. The titlecasing of <code>Http</code> was a readability compromise,
-						and it happened so early in the web's history that it became the name everyone knows.
+						By the convention's own logic, it should be <code>XMLHTTPRequest</code>.
+						It isn't, because <code>XMLHTTP</code> is where you stop being able to tell
+						where one acronym ends and the next begins.
+						Titlecasing <code>Http</code> was the fix.
 					</p>
 
 					<h3>The Web Crypto API</h3>
