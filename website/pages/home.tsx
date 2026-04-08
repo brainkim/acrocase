@@ -167,7 +167,7 @@ export function HomePage() {
 				<main>
 					<h1>ACROCase</h1>
 					<p class="tagline">
-						<strong class="acro">A</strong>cronyms <strong class="acro">C</strong>onsistently <strong class="acro">R</strong>etain <strong class="acro">O</strong>riginal <strong class="acro">Case</strong>
+						<strong class="acro">A</strong>cronyms <strong class="acro">C</strong>onsistently <strong class="acro">R</strong>etain <strong class="acro">O</strong>riginal <strong>Case</strong>
 					</p>
 
 					<p>
