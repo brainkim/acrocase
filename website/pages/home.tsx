@@ -174,9 +174,7 @@ export function HomePage() {
 						The web platform has hundreds of APIs that contain acronyms.
 						With remarkable consistency, those acronyms are kept uppercase:
 						<code>inner<span class="acro">HTML</span></code>, <code><span class="acro">XML</span>Document</code>, <code>to<span class="acro">JSON</span></code>, <code>encode<span class="acro">URI</span>Component</code>.
-						ACROCase is simply a name for the convention that already exists,
-						as well as an ESLint plugin to make sure your codebases are adhering
-						to it.
+						ACROCase is a name for this convention, and an ESLint plugin to enforce it.
 					</p>
 
 					<h2>Acronyms in Web APIs</h2>
