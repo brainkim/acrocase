@@ -29,11 +29,11 @@
     "eslint": ">=8.0.0"
   },
   "dependencies": {
-    "@b9g/cache": "^0.2.0",
-    "@b9g/crank": "^0.7.4",
-    "@b9g/filesystem": "^0.1.8",
-    "@b9g/router": "^0.2.0",
-    "@b9g/shovel": "^0.2.0"
+    "@b9g/cache": "^0.2.2",
+    "@b9g/crank": "^0.7.9",
+    "@b9g/filesystem": "^0.1.11",
+    "@b9g/router": "^0.2.5",
+    "@b9g/shovel": "^0.2.19"
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
