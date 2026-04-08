@@ -167,7 +167,7 @@ export function HomePage() {
 						ACROCase is simply a name for the convention that already exists.
 					</p>
 
-					<h2>The Evidence</h2>
+					<h2>Acronyms in Web APIs</h2>
 					<p>
 						Across the DOM, CSS Object Model, and every major browser API, acronyms retain their original casing.
 						This pattern holds whether the acronym appears at the start, middle, or end of an identifier.
