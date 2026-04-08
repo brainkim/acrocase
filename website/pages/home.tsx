@@ -332,8 +332,7 @@ export function HomePage() {
 
 					<h3>WebRTC Sub-Protocols</h3>
 					<p>
-						WebRTC keeps <code>RTC</code> uppercase in every interface name: <code>RTCPeerConnection</code>, <code>RTCDataChannel</code>, <code>RTCDTMFSender</code>.
-						But when a second acronym follows <code>RTC</code>, it gets titlecased:
+						WebRTC titlecases acronyms that follow <code>RTC</code>:
 					</p>
 					<ul>
 						<li><code>RTCDtlsTransport</code>, not <code>RTCDTLSTransport</code></li>
@@ -341,20 +340,15 @@ export function HomePage() {
 						<li><code>RTCSctpTransport</code>, not <code>RTCSCTPTransport</code></li>
 					</ul>
 					<p>
-						Unlike the Crypto API, WebRTC only titlecases where chaining actually occurs.
-						<code>RTCDTMF</code> would be unreadable, so <code>RTCDTMFSender</code> is... wait.
-						That one actually keeps <code>DTMF</code> uppercase. The inconsistency runs deep.
+						But not always. <code>RTCDTMFSender</code> keeps <code>DTMF</code> uppercase.
 					</p>
 
 					<h3>The Pattern</h3>
 					<p>
-						Every exception to uppercase acronyms in the web platform exists because two acronyms
-						ended up next to each other. The solution is always the same: titlecase one of them.
-						The convention itself is never in question. The problem is always chaining.
-					</p>
-					<p>
-						When naming new code, restructure to avoid adjacent acronyms.
-						When that is not possible, titlecasing the second acronym is the established precedent.
+						Every deviation from uppercase acronyms in the web platform
+						is a response to chaining. When two acronyms are adjacent,
+						one gets titlecased to preserve readability. The convention
+						itself is never in question.
 					</p>
 
 					<h2>The Convention</h2>
