@@ -1,14 +1,32 @@
 {
-  "name": "acrocase",
-  "private": true,
+  "name": "eslint-plugin-acrocase",
   "version": "0.0.1",
+  "description": "ESLint plugin to enforce ACROCase naming conventions",
+  "main": "lib/index.js",
   "type": "module",
+  "files": [
+    "lib",
+    "dictionary.json"
+  ],
   "scripts": {
     "develop": "shovel develop src/app.tsx --platform bun",
     "static": "MODE=production shovel build src/app.tsx --platform bun --lifecycle",
     "predeploy": "npm run static",
-    "deploy": "gh-pages -d dist/public --nojekyll --cname acrocase.org",
+    "deploy": "wrangler pages deploy dist/public --project-name acrocase",
     "preview": "bun run static && bunx serve dist/public"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "acrocase",
+    "naming-convention",
+    "acronyms"
+  ],
+  "author": "Brian Kim",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
   },
   "dependencies": {
     "@b9g/cache": "^0.2.0",
@@ -19,7 +37,11 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
-    "gh-pages": "^6.3.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "wrangler": "^4.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brainkim/acrocase"
   }
 }
