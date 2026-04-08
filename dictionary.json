@@ -584,15 +584,5 @@
         "Intl.NumberFormat"
       ]
     }
-  },
-  "chaining": {
-    "description": "When acronyms appear adjacent to each other, the result is hard to read. The Web Crypto API handles this by titlecasing all its acronyms (AesCbcParams instead of AESCBCParams). Restructure names to avoid the problem when possible.",
-    "webPlatformExamples": {
-      "RTCDtlsTransport": "RTC + DTLS, titlecased to avoid RTCDTLS",
-      "RTCSctpTransport": "RTC + SCTP, titlecased to avoid RTCSCTP",
-      "RTCRtpSender": "RTC + RTP, titlecased to avoid RTCRTP",
-      "AesCbcParams": "AES + CBC, titlecased to avoid AESCBC",
-      "RsaOaepParams": "RSA + OAEP, titlecased to avoid RSAOAEP"
-    }
   }
 }
