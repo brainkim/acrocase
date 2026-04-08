@@ -1,4 +1,4 @@
-const acrocase = require("./rules/acrocase");
+const acrocase = require("./rules/acrocase.cjs");
 
 module.exports = {
   rules: {

@@ -2,15 +2,16 @@
   "name": "eslint-plugin-acrocase",
   "version": "0.0.1",
   "description": "ESLint plugin to enforce ACROCase naming conventions",
-  "main": "lib/index.js",
+  "main": "src/index.cjs",
   "type": "module",
   "files": [
-    "lib",
+    "src/index.cjs",
+    "src/rules",
     "dictionary.json"
   ],
   "scripts": {
-    "develop": "shovel develop src/app.tsx --platform bun",
-    "static": "MODE=production shovel build src/app.tsx --platform bun --lifecycle",
+    "develop": "shovel develop website/app.tsx --platform bun",
+    "static": "MODE=production shovel build website/app.tsx --platform bun --lifecycle",
     "predeploy": "npm run static",
     "deploy": "gh-pages -d dist/public --nojekyll --cname acrocase.org",
     "preview": "bun run static && bunx serve dist/public"
