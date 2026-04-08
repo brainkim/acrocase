@@ -129,6 +129,16 @@ export function HomePage() {
 					.examples tr:last-child td {
 						border-bottom: none;
 					}
+					.examples td:first-child {
+						color: #1565c0;
+						font-weight: 600;
+						font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+						font-size: 0.9em;
+					}
+					.acro {
+						color: #1565c0;
+						font-weight: 600;
+					}
 					.note {
 						background: #fff3e0;
 						border-left: 4px solid #ff9800;
@@ -157,14 +167,16 @@ export function HomePage() {
 				<main>
 					<h1>ACROCase</h1>
 					<p class="tagline">
-						<strong>A</strong>cronyms <strong>C</strong>onsistently <strong>R</strong>etain <strong>O</strong>riginal <strong>Case</strong>
+						<strong class="acro">A</strong>cronyms <strong class="acro">C</strong>onsistently <strong class="acro">R</strong>etain <strong class="acro">O</strong>riginal <strong class="acro">Case</strong>
 					</p>
 
 					<p>
 						The web platform has hundreds of APIs that contain acronyms.
 						With remarkable consistency, those acronyms are kept uppercase:
-						<code>innerHTML</code>, <code>XMLDocument</code>, <code>toJSON</code>, <code>encodeURIComponent</code>.
-						ACROCase is simply a name for the convention that already exists.
+						<code>inner<span class="acro">HTML</span></code>, <code><span class="acro">XML</span>Document</code>, <code>to<span class="acro">JSON</span></code>, <code>encode<span class="acro">URI</span>Component</code>.
+						ACROCase is simply a name for the convention that already exists,
+						as well as an ESLint plugin to make sure your codebases are adhering
+						to it.
 					</p>
 
 					<h2>Acronyms in Web APIs</h2>
