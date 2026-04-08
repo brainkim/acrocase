@@ -130,13 +130,13 @@ export function HomePage() {
 						border-bottom: none;
 					}
 					.examples td:first-child {
-						color: #1565c0;
+						color: #c62828;
 						font-weight: 600;
 						font-family: 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
 						font-size: 0.9em;
 					}
 					.acro {
-						color: #1565c0;
+						color: #c62828;
 						font-weight: 600;
 					}
 					.note {
