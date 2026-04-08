@@ -178,10 +178,6 @@ export function HomePage() {
 					</p>
 
 					<h2>Acronyms in Web APIs</h2>
-					<p>
-						Across the DOM, CSS Object Model, and every major browser API, acronyms retain their original casing.
-						This pattern holds whether the acronym appears at the start, middle, or end of an identifier.
-					</p>
 
 					<div class="examples">
 						<table>
@@ -273,86 +269,37 @@ export function HomePage() {
 					</div>
 
 					<p>
-						This is not a handful of cherry-picked examples.
-						There are over a hundred <code>HTML*Element</code> interfaces, over eighty <code>SVG*</code> interfaces, over fifty <code>CSS*</code> interfaces, and over thirty each for <code>GPU*</code>, <code>RTC*</code>, and <code>XR*</code>.
-						The pattern is the default, not the exception.
+						100+ <code>HTML*</code> interfaces. 80+ <code>SVG*</code>. 50+ <code>CSS*</code>.
+						30+ each for <code>GPU*</code>, <code>RTC*</code>, and <code>XR*</code>.
 					</p>
 
-					<h2>Abbreviations That Are Not Acronyms</h2>
+					<h2>Not Acronyms</h2>
 					<p>
-						Not everything short is an acronym. The web platform draws a clear line
-						between acronyms (which stay uppercase) and abbreviations (which follow normal casing).
+						<code>Id</code> is an abbreviation, not an acronym.
+						The DOM uses <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>.
+						Similarly, the Internationalization API is <code>Intl</code>, not <code>INTL</code>.
 					</p>
 
-					<h3>Id</h3>
+					<h2>Chaining</h2>
 					<p>
-						<code>Id</code> is an abbreviation for "identifier," not an acronym.
-						The DOM uses it consistently: <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>, <code>requestId</code>.
-						Writing <code>userID</code> is wrong by web platform convention.
+						When two acronyms are adjacent, one gets titlecased.
+						<code>XMLHttpRequest</code> should be <code>XMLHTTPRequest</code> by the convention's own logic,
+						but <code>XMLHTTP</code> is where you lose the boundary.
 					</p>
-
-					<h3>Intl</h3>
 					<p>
-						The Internationalization API is <code>Intl</code>, not <code>INTL</code>.
-						It follows normal PascalCase as an abbreviation, not an acronym.
-					</p>
-
-					<h2>Where It Breaks Down</h2>
-					<p>
-						The convention is not perfectly consistent.
-						Every exception tells a story about what happens when acronyms collide.
-					</p>
-
-					<h3>XMLHttpRequest</h3>
-					<p>
-						By the convention's own logic, it should be <code>XMLHTTPRequest</code>.
-						It isn't, because <code>XMLHTTP</code> is where you stop being able to tell
-						where one acronym ends and the next begins.
-						Titlecasing <code>Http</code> was the fix.
-					</p>
-
-					<h3>The Web Crypto API</h3>
-					<p>
-						AES, RSA, HMAC, and SHA are universally recognized as acronyms.
-						But the Web Crypto API titlecases all of them:
+						The Web Crypto API titlecases all its acronyms for the same reason:
 					</p>
 					<ul>
 						<li><code>AesCbcParams</code>, not <code>AESCBCParams</code></li>
 						<li><code>RsaOaepParams</code>, not <code>RSAOAEPParams</code></li>
-						<li><code>HmacKeyGenParams</code>, not <code>HMACKeyGenParams</code></li>
 					</ul>
 					<p>
-						The same chaining problem drove this decision. Most crypto parameter types
-						combine two acronyms (AES+CBC, RSA+OAEP), and the team chose to titlecase everything
-						for internal consistency rather than mix styles. This means even <code>AesKeyGenParams</code>
-						is titlecased, where <code>AESKeyGenParams</code> would have been perfectly readable.
-					</p>
-
-					<h3>WebRTC Sub-Protocols</h3>
-					<p>
-						WebRTC titlecases acronyms that follow <code>RTC</code>:
-					</p>
-					<ul>
-						<li><code>RTCDtlsTransport</code>, not <code>RTCDTLSTransport</code></li>
-						<li><code>RTCRtpSender</code>, not <code>RTCRTPSender</code></li>
-						<li><code>RTCSctpTransport</code>, not <code>RTCSCTPTransport</code></li>
-					</ul>
-					<p>
-						But not always. <code>RTCDTMFSender</code> keeps <code>DTMF</code> uppercase.
-					</p>
-
-					<h3>The Pattern</h3>
-					<p>
-						Every deviation from uppercase acronyms in the web platform
-						is a response to chaining. When two acronyms are adjacent,
-						one gets titlecased to preserve readability. The convention
-						itself is never in question.
+						WebRTC does the same selectively:
+						<code>RTCDtlsTransport</code>, <code>RTCRtpSender</code>.
+						But not always: <code>RTCDTMFSender</code> keeps <code>DTMF</code> uppercase.
 					</p>
 
 					<h2>The Convention</h2>
-					<p>
-						ACROCase is camelCase with one rule: known acronyms keep their uppercase form.
-					</p>
 					<div class="examples">
 						<table>
 							<thead>
@@ -364,33 +311,25 @@ export function HomePage() {
 							</thead>
 							<tbody>
 								<tr>
-									<td>Acronym at start</td>
+									<td>Start</td>
 									<td><code>urlString</code></td>
 									<td><code>URLString</code></td>
 								</tr>
 								<tr>
-									<td>Acronym at end</td>
+									<td>End</td>
 									<td><code>imageURL</code></td>
 									<td><code>ImageURL</code></td>
 								</tr>
 								<tr>
-									<td>Multiple acronyms</td>
+									<td>Multiple</td>
 									<td><code>htmlToJSON</code></td>
 									<td><code>HTMLToJSON</code></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<p>
-						When an acronym starts a camelCase identifier, it is lowercased
-						like any other first word: <code>urlString</code>, <code>httpRequest</code>, <code>jsonData</code>.
-						In UpperACROCase (PascalCase with acronyms), it stays uppercase: <code>URLString</code>, <code>HTTPRequest</code>, <code>JSONData</code>.
-					</p>
 
 					<h2>ESLint Plugin</h2>
-					<p>
-						<code>eslint-plugin-acrocase</code> enforces the convention automatically:
-					</p>
 					<pre><code>{`npm install eslint-plugin-acrocase --save-dev`}</code></pre>
 					<pre><code>{`{
   "plugins": ["acrocase"],
@@ -399,19 +338,14 @@ export function HomePage() {
   }
 }`}</code></pre>
 					<p>
-						The rule is auto-fixable. It ships with a <a href="https://github.com/brainkim/acrocase/blob/main/dictionary.json">dictionary</a> of
-						139 acronyms sourced from web platform APIs and common programming usage.
-						Add project-specific acronyms through configuration:
+						Auto-fixable. Ships with a <a href="https://github.com/brainkim/acrocase/blob/main/dictionary.json">dictionary</a> of
+						139 acronyms. Extensible:
 					</p>
 					<pre><code>{`{
   "acrocase/acrocase": ["error", {
     "acronyms": ["GCP", "NATS"]
   }]
 }`}</code></pre>
-					<p>
-						If you use ESLint's built-in <code>camelcase</code> rule, disable it.
-						It enforces lowercase acronyms, which contradicts the web platform.
-					</p>
 
 					<footer>
 						<p>
