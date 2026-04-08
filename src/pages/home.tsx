@@ -287,11 +287,26 @@ export function HomePage() {
 						It follows normal PascalCase as an abbreviation, not an acronym.
 					</p>
 
-					<h2>Where the Web Platform Disagrees with Itself</h2>
+					<h2>Where It Breaks Down</h2>
 					<p>
-						The convention is not perfectly consistent. There is one major area where it breaks down:
-						the Web Crypto API.
+						The convention is not perfectly consistent.
+						Every exception tells a story about what happens when acronyms collide.
 					</p>
+
+					<h3>XMLHttpRequest</h3>
+					<p>
+						The most famous API on the web gets its own acronyms wrong.
+						<code>XML</code> is uppercase, but <code>Http</code> is titlecased.
+						By the web platform's own rules, it should be <code>XMLHTTPRequest</code>.
+					</p>
+					<p>
+						But read <code>XMLHTTP</code> out loud. Where does <code>XML</code> end and <code>HTTP</code> begin?
+						This is the original sin of acronym chaining: two uppercase acronyms next to each other
+						produce an unreadable wall of capitals. The titlecasing of <code>Http</code> was a readability compromise,
+						and it happened so early in the web's history that it became the name everyone knows.
+					</p>
+
+					<h3>The Web Crypto API</h3>
 					<p>
 						AES, RSA, HMAC, and SHA are universally recognized as acronyms.
 						But the Web Crypto API titlecases all of them:
@@ -302,7 +317,16 @@ export function HomePage() {
 						<li><code>HmacKeyGenParams</code>, not <code>HMACKeyGenParams</code></li>
 					</ul>
 					<p>
-						WebRTC does something similar with sub-protocol names:
+						The same chaining problem drove this decision. Most crypto parameter types
+						combine two acronyms (AES+CBC, RSA+OAEP), and the team chose to titlecase everything
+						for internal consistency rather than mix styles. This means even <code>AesKeyGenParams</code>
+						is titlecased, where <code>AESKeyGenParams</code> would have been perfectly readable.
+					</p>
+
+					<h3>WebRTC Sub-Protocols</h3>
+					<p>
+						WebRTC keeps <code>RTC</code> uppercase in every interface name: <code>RTCPeerConnection</code>, <code>RTCDataChannel</code>, <code>RTCDTMFSender</code>.
+						But when a second acronym follows <code>RTC</code>, it gets titlecased:
 					</p>
 					<ul>
 						<li><code>RTCDtlsTransport</code>, not <code>RTCDTLSTransport</code></li>
@@ -310,22 +334,20 @@ export function HomePage() {
 						<li><code>RTCSctpTransport</code>, not <code>RTCSCTPTransport</code></li>
 					</ul>
 					<p>
-						The reason is chaining. When two acronyms appear next to each other,
-						the boundary between them disappears. <code>AESCBC</code> is hard to read.
-						<code>RTCDTLS</code> is worse. Both the Crypto and RTC teams chose to titlecase
-						acronyms that would otherwise chain, sacrificing acronym casing for readability.
+						Unlike the Crypto API, WebRTC only titlecases where chaining actually occurs.
+						<code>RTCDTMF</code> would be unreadable, so <code>RTCDTMFSender</code> is... wait.
+						That one actually keeps <code>DTMF</code> uppercase. The inconsistency runs deep.
+					</p>
+
+					<h3>The Pattern</h3>
+					<p>
+						Every exception to uppercase acronyms in the web platform exists because two acronyms
+						ended up next to each other. The solution is always the same: titlecase one of them.
+						The convention itself is never in question. The problem is always chaining.
 					</p>
 					<p>
-						This is a pragmatic tradeoff, not a rejection of the convention.
-						The Crypto API titlecases <em>all</em> its acronyms for internal consistency,
-						even when chaining is not an issue (like <code>AesKeyGenParams</code>,
-						which could have been <code>AESKeyGenParams</code> without any readability problem).
-						Meanwhile, <code>RTCPeerConnection</code> keeps <code>RTC</code> uppercase because it does
-						not chain with the next word.
-					</p>
-					<p>
-						The lesson: avoid putting acronyms next to each other. When that is unavoidable,
-						titlecasing the second acronym is the established precedent.
+						When naming new code, restructure to avoid adjacent acronyms.
+						When that is not possible, titlecasing the second acronym is the established precedent.
 					</p>
 
 					<h2>The Convention</h2>
