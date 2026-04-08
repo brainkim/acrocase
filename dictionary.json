@@ -1,281 +1,219 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "ACROCase dictionary of web platform acronyms and abbreviations",
+  "description": "ACROCase dictionary of acronyms found in programming and the web platform",
   "acronyms": {
-    "API": {
-      "expansion": "Application Programming Interface",
-      "examples": {
-        "acroCase": ["restAPI", "apiKey"],
-        "UpperACROCase": ["APIRequest", "APIResponse"]
-      }
+    "ACL": { "expansion": "Access Control List" },
+    "AES": { "expansion": "Advanced Encryption Standard" },
+    "ANSI": { "expansion": "American National Standards Institute" },
+    "API": { "expansion": "Application Programming Interface" },
+    "ARIA": {
+      "expansion": "Accessible Rich Internet Applications",
+      "webPlatform": ["ARIAMixin", "ariaLabel", "ariaHidden"]
     },
-    "ASCII": {
-      "expansion": "American Standard Code for Information Interchange",
-      "examples": {
-        "acroCase": ["asciiArt", "toASCII"],
-        "UpperACROCase": ["ASCIIEncoder"]
-      }
+    "ASCII": { "expansion": "American Standard Code for Information Interchange" },
+    "AST": { "expansion": "Abstract Syntax Tree" },
+    "BYOB": {
+      "expansion": "Bring Your Own Buffer",
+      "webPlatform": ["ReadableStreamBYOBReader", "ReadableStreamBYOBRequest"]
     },
-    "CORS": {
-      "expansion": "Cross-Origin Resource Sharing",
-      "examples": {
-        "acroCase": ["corsHeaders", "enableCORS"],
-        "UpperACROCase": ["CORSMiddleware"]
-      }
+    "CBC": { "expansion": "Cipher Block Chaining" },
+    "CDN": { "expansion": "Content Delivery Network" },
+    "CLI": { "expansion": "Command-Line Interface" },
+    "CORS": { "expansion": "Cross-Origin Resource Sharing" },
+    "CPU": { "expansion": "Central Processing Unit" },
+    "CRUD": { "expansion": "Create, Read, Update, Delete" },
+    "CSRF": { "expansion": "Cross-Site Request Forgery" },
+    "CSP": {
+      "expansion": "Content Security Policy",
+      "webPlatform": ["CSPViolationReport"]
     },
     "CSS": {
       "expansion": "Cascading Style Sheets",
-      "webPlatform": ["CSSStyleSheet", "CSSRule", "CSS.supports()"],
-      "examples": {
-        "acroCase": ["cssText", "inlineCSS"],
-        "UpperACROCase": ["CSSStyleSheet", "CSSParser"]
-      }
+      "webPlatform": ["CSS", "CSSStyleSheet", "CSSRule", "CSSStyleDeclaration"]
     },
+    "CSV": { "expansion": "Comma-Separated Values" },
+    "CTR": { "expansion": "Counter Mode" },
+    "DNS": { "expansion": "Domain Name System" },
     "DOM": {
       "expansion": "Document Object Model",
-      "webPlatform": ["DOMParser", "DOMString", "DOMRect", "DOMException"],
-      "examples": {
-        "acroCase": ["domNode", "virtualDOM"],
-        "UpperACROCase": ["DOMParser", "DOMElement"]
-      }
+      "webPlatform": ["DOMParser", "DOMRect", "DOMMatrix", "DOMTokenList", "DOMException"]
     },
-    "EOF": {
-      "expansion": "End of File",
-      "examples": {
-        "acroCase": ["eofMarker", "reachedEOF"],
-        "UpperACROCase": ["EOFException"]
-      }
+    "DSL": { "expansion": "Domain-Specific Language" },
+    "DTMF": {
+      "expansion": "Dual-Tone Multi-Frequency",
+      "webPlatform": ["RTCDTMFSender", "RTCDTMFToneChangeEvent"]
+    },
+    "DTO": { "expansion": "Data Transfer Object" },
+    "ECDSA": { "expansion": "Elliptic Curve Digital Signature Algorithm" },
+    "EOF": { "expansion": "End of File" },
+    "FIFO": { "expansion": "First In, First Out" },
+    "FTP": { "expansion": "File Transfer Protocol" },
+    "GATT": {
+      "expansion": "Generic Attribute Profile",
+      "webPlatform": ["BluetoothRemoteGATTServer", "BluetoothRemoteGATTService"]
+    },
+    "GC": { "expansion": "Garbage Collection" },
+    "GCM": { "expansion": "Galois/Counter Mode" },
+    "GL": {
+      "expansion": "Graphics Library",
+      "webPlatform": ["WebGLRenderingContext", "GLenum", "GLint", "GLfloat"]
     },
     "GPU": {
       "expansion": "Graphics Processing Unit",
-      "webPlatform": ["GPU", "GPUDevice", "GPUBuffer"],
-      "examples": {
-        "acroCase": ["gpuMemory", "useGPU"],
-        "UpperACROCase": ["GPUDevice", "GPUAdapter"]
-      }
+      "webPlatform": ["GPU", "GPUDevice", "GPUBuffer", "GPUTexture", "GPUAdapter"]
     },
+    "GUI": { "expansion": "Graphical User Interface" },
+    "GUID": { "expansion": "Globally Unique Identifier" },
+    "HID": {
+      "expansion": "Human Interface Device",
+      "webPlatform": ["HID", "HIDDevice", "HIDConnectionEvent"]
+    },
+    "HMAC": { "expansion": "Hash-Based Message Authentication Code" },
     "HTML": {
       "expansion": "HyperText Markup Language",
-      "webPlatform": ["HTMLElement", "HTMLCollection", "innerHTML", "outerHTML"],
-      "examples": {
-        "acroCase": ["htmlString", "innerHTML"],
-        "UpperACROCase": ["HTMLElement", "HTMLParser"]
-      }
+      "webPlatform": ["HTMLElement", "HTMLCollection", "innerHTML", "outerHTML"]
     },
-    "HTTP": {
-      "expansion": "HyperText Transfer Protocol",
-      "examples": {
-        "acroCase": ["httpRequest", "sendHTTP"],
-        "UpperACROCase": ["HTTPClient", "HTTPServer"]
-      }
+    "HTTP": { "expansion": "HyperText Transfer Protocol" },
+    "HTTPS": { "expansion": "HyperText Transfer Protocol Secure" },
+    "IDB": {
+      "expansion": "IndexedDB",
+      "webPlatform": ["IDBDatabase", "IDBObjectStore", "IDBRequest", "IDBTransaction"]
     },
-    "HTTPS": {
-      "expansion": "HyperText Transfer Protocol Secure",
-      "examples": {
-        "acroCase": ["httpsOnly", "useHTTPS"],
-        "UpperACROCase": ["HTTPSServer"]
-      }
+    "IIR": {
+      "expansion": "Infinite Impulse Response",
+      "webPlatform": ["IIRFilterNode"]
     },
+    "IMAP": { "expansion": "Internet Message Access Protocol" },
+    "IO": { "expansion": "Input/Output" },
+    "IP": { "expansion": "Internet Protocol" },
+    "IPC": { "expansion": "Inter-Process Communication" },
     "JSON": {
       "expansion": "JavaScript Object Notation",
-      "webPlatform": ["JSON.parse()", "JSON.stringify()", "toJSON"],
-      "examples": {
-        "acroCase": ["jsonString", "toJSON"],
-        "UpperACROCase": ["JSONParser", "JSONResponse"]
-      }
+      "webPlatform": ["JSON", "JSON.parse()", "JSON.stringify()", "toJSON"]
+    },
+    "JWT": { "expansion": "JSON Web Token" },
+    "LIFO": { "expansion": "Last In, First Out" },
+    "LRU": { "expansion": "Least Recently Used" },
+    "MIDI": {
+      "expansion": "Musical Instrument Digital Interface",
+      "webPlatform": ["MIDIAccess", "MIDIInput", "MIDIOutput", "MIDIPort"]
     },
     "MIME": {
       "expansion": "Multipurpose Internet Mail Extensions",
-      "webPlatform": ["MIMEType"],
-      "examples": {
-        "acroCase": ["mimeType", "parseMIME"],
-        "UpperACROCase": ["MIMEType", "MIMEParser"]
-      }
+      "webPlatform": ["MIMEType"]
     },
-    "PDF": {
-      "expansion": "Portable Document Format",
-      "examples": {
-        "acroCase": ["pdfData", "generatePDF"],
-        "UpperACROCase": ["PDFDocument", "PDFViewer"]
-      }
+    "NDEF": {
+      "expansion": "NFC Data Exchange Format",
+      "webPlatform": ["NDEFMessage", "NDEFReader", "NDEFRecord"]
     },
-    "PNG": {
-      "expansion": "Portable Network Graphics",
-      "examples": {
-        "acroCase": ["pngData", "toPNG"],
-        "UpperACROCase": ["PNGEncoder"]
-      }
+    "NFC": { "expansion": "Near-Field Communication" },
+    "OAEP": { "expansion": "Optimal Asymmetric Encryption Padding" },
+    "ORM": { "expansion": "Object-Relational Mapping" },
+    "OS": { "expansion": "Operating System" },
+    "OTP": {
+      "expansion": "One-Time Password",
+      "webPlatform": ["OTPCredential"]
     },
-    "RGB": {
-      "expansion": "Red Green Blue",
-      "examples": {
-        "acroCase": ["rgbValue", "toRGB"],
-        "UpperACROCase": ["RGBColor"]
-      }
-    },
-    "RGBA": {
-      "expansion": "Red Green Blue Alpha",
-      "examples": {
-        "acroCase": ["rgbaValue", "toRGBA"],
-        "UpperACROCase": ["RGBAColor"]
-      }
-    },
+    "PDF": { "expansion": "Portable Document Format" },
+    "PNG": { "expansion": "Portable Network Graphics" },
+    "POSIX": { "expansion": "Portable Operating System Interface" },
+    "PSS": { "expansion": "Probabilistic Signature Scheme" },
+    "RAM": { "expansion": "Random Access Memory" },
+    "REST": { "expansion": "Representational State Transfer" },
+    "RGB": { "expansion": "Red Green Blue" },
+    "RGBA": { "expansion": "Red Green Blue Alpha" },
+    "RPC": { "expansion": "Remote Procedure Call" },
+    "RSA": { "expansion": "Rivest-Shamir-Adleman" },
+    "RSS": { "expansion": "Really Simple Syndication" },
     "RTC": {
       "expansion": "Real-Time Communication",
-      "webPlatform": ["RTCPeerConnection", "RTCDataChannel"],
-      "examples": {
-        "acroCase": ["rtcConnection", "setupRTC"],
-        "UpperACROCase": ["RTCPeerConnection"]
-      }
+      "webPlatform": ["RTCPeerConnection", "RTCDataChannel", "RTCSessionDescription"]
     },
-    "SQL": {
-      "expansion": "Structured Query Language",
-      "examples": {
-        "acroCase": ["sqlQuery", "executeSQL"],
-        "UpperACROCase": ["SQLDatabase", "SQLStatement"]
-      }
-    },
-    "SSL": {
-      "expansion": "Secure Sockets Layer",
-      "examples": {
-        "acroCase": ["sslCert", "useSSL"],
-        "UpperACROCase": ["SSLCertificate"]
-      }
-    },
+    "SDK": { "expansion": "Software Development Kit" },
+    "SHA": { "expansion": "Secure Hash Algorithm" },
+    "SMTP": { "expansion": "Simple Mail Transfer Protocol" },
+    "SQL": { "expansion": "Structured Query Language" },
+    "SSH": { "expansion": "Secure Shell" },
+    "SSL": { "expansion": "Secure Sockets Layer" },
+    "SSR": { "expansion": "Server-Side Rendering" },
     "SVG": {
       "expansion": "Scalable Vector Graphics",
-      "webPlatform": ["SVGElement", "SVGRect", "SVGPathElement"],
-      "examples": {
-        "acroCase": ["svgData", "toSVG"],
-        "UpperACROCase": ["SVGElement", "SVGParser"]
-      }
+      "webPlatform": ["SVGElement", "SVGPathElement", "SVGRectElement"]
     },
-    "TCP": {
-      "expansion": "Transmission Control Protocol",
-      "examples": {
-        "acroCase": ["tcpSocket", "openTCP"],
-        "UpperACROCase": ["TCPConnection"]
-      }
+    "TCP": { "expansion": "Transmission Control Protocol" },
+    "TLS": { "expansion": "Transport Layer Security" },
+    "TOML": { "expansion": "Tom's Obvious Minimal Language" },
+    "TTL": { "expansion": "Time to Live" },
+    "UA": {
+      "expansion": "User-Agent",
+      "webPlatform": ["NavigatorUAData"]
     },
-    "TLS": {
-      "expansion": "Transport Layer Security",
-      "examples": {
-        "acroCase": ["tlsVersion", "useTLS"],
-        "UpperACROCase": ["TLSSocket"]
-      }
-    },
-    "UDP": {
-      "expansion": "User Datagram Protocol",
-      "examples": {
-        "acroCase": ["udpSocket", "sendUDP"],
-        "UpperACROCase": ["UDPSocket"]
-      }
-    },
+    "UDP": { "expansion": "User Datagram Protocol" },
     "UI": {
       "expansion": "User Interface",
-      "examples": {
-        "acroCase": ["uiComponent", "updateUI"],
-        "UpperACROCase": ["UIElement", "UIManager"]
-      }
+      "webPlatform": ["UIEvent"]
     },
     "URI": {
       "expansion": "Uniform Resource Identifier",
-      "webPlatform": ["encodeURI", "decodeURI", "encodeURIComponent", "decodeURIComponent"],
-      "examples": {
-        "acroCase": ["uriString", "encodeURI"],
-        "UpperACROCase": ["URIParser"]
-      }
+      "webPlatform": ["encodeURI", "decodeURI", "encodeURIComponent", "decodeURIComponent"]
     },
     "URL": {
       "expansion": "Uniform Resource Locator",
-      "webPlatform": ["URL", "URLSearchParams", "createObjectURL"],
-      "examples": {
-        "acroCase": ["urlString", "imageURL"],
-        "UpperACROCase": ["URLParser", "URLSearchParams"]
-      }
+      "webPlatform": ["URL", "URLSearchParams", "URLPattern", "createObjectURL"]
     },
     "USB": {
       "expansion": "Universal Serial Bus",
-      "webPlatform": ["USB", "USBDevice"],
-      "examples": {
-        "acroCase": ["usbDevice", "connectUSB"],
-        "UpperACROCase": ["USBDevice", "USBConnection"]
-      }
+      "webPlatform": ["USB", "USBDevice", "USBConfiguration"]
     },
-    "UTF": {
-      "expansion": "Unicode Transformation Format",
-      "examples": {
-        "acroCase": ["utfEncoding", "toUTF8"],
-        "UpperACROCase": ["UTF8Encoder"]
-      }
-    },
+    "UTF": { "expansion": "Unicode Transformation Format" },
     "UUID": {
       "expansion": "Universally Unique Identifier",
-      "examples": {
-        "acroCase": ["uuidString", "generateUUID"],
-        "UpperACROCase": ["UUIDGenerator"]
-      }
+      "webPlatform": ["BluetoothUUID"]
     },
-    "WebGL": {
-      "expansion": "Web Graphics Library",
-      "webPlatform": ["WebGLRenderingContext", "WebGL2RenderingContext"],
-      "note": "GL portion stays uppercase",
-      "examples": {
-        "acroCase": ["webglContext"],
-        "UpperACROCase": ["WebGLRenderingContext"]
-      }
+    "VM": { "expansion": "Virtual Machine" },
+    "VPN": { "expansion": "Virtual Private Network" },
+    "VR": {
+      "expansion": "Virtual Reality",
+      "webPlatform": ["VRDisplay", "VRPose"]
     },
-    "XHR": {
-      "expansion": "XMLHttpRequest",
-      "webPlatform": ["XMLHttpRequest"],
-      "note": "Abbreviation of XMLHttpRequest",
-      "examples": {
-        "acroCase": ["xhrRequest", "sendXHR"],
-        "UpperACROCase": ["XHRWrapper"]
-      }
+    "VTT": {
+      "expansion": "Video Text Tracks",
+      "webPlatform": ["VTTCue", "VTTRegion"]
     },
+    "WASM": { "expansion": "WebAssembly" },
+    "XHR": { "expansion": "XMLHttpRequest" },
     "XML": {
       "expansion": "Extensible Markup Language",
-      "webPlatform": ["XMLDocument", "XMLSerializer", "XMLHttpRequest"],
-      "examples": {
-        "acroCase": ["xmlData", "parseXML"],
-        "UpperACROCase": ["XMLDocument", "XMLParser"]
-      }
+      "webPlatform": ["XMLDocument", "XMLSerializer", "XMLHttpRequest"]
     },
-    "XSS": {
-      "expansion": "Cross-Site Scripting",
-      "examples": {
-        "acroCase": ["xssFilter", "preventXSS"],
-        "UpperACROCase": ["XSSProtection"]
-      }
-    }
+    "XR": {
+      "expansion": "Extended Reality",
+      "webPlatform": ["XRSystem", "XRSession", "XRFrame", "XRSpace"]
+    },
+    "XSLT": {
+      "expansion": "Extensible Stylesheet Language Transformations",
+      "webPlatform": ["XSLTProcessor"]
+    },
+    "XSS": { "expansion": "Cross-Site Scripting" },
+    "YAML": { "expansion": "YAML Ain't Markup Language" }
   },
   "exceptions": {
     "Id": {
-      "instead_of": "ID",
       "expansion": "Identifier",
-      "reason": "Web platform convention",
-      "webPlatform": ["getElementById", "elementId", "clientId", "requestId"],
-      "examples": {
-        "acroCase": ["userId", "idString"],
-        "UpperACROCase": ["UserId"]
-      }
+      "webPlatform": ["getElementById", "elementId", "clientId", "requestId"]
     },
     "Intl": {
-      "instead_of": "INTL",
       "expansion": "Internationalization",
-      "reason": "Web platform convention",
-      "webPlatform": ["Intl", "Intl.DateTimeFormat", "Intl.NumberFormat"],
-      "examples": {
-        "acroCase": ["intlFormat"],
-        "UpperACROCase": ["IntlProvider"]
-      }
+      "webPlatform": ["Intl", "Intl.DateTimeFormat", "Intl.NumberFormat"]
     }
   },
-  "avoidChaining": {
-    "description": "Avoid placing acronyms adjacent to each other",
-    "bad": ["XMLHTTPRequest", "ABORTURI", "HTMLURL"],
-    "good": ["XMLHttpRequest", "abortURI", "htmlURL"],
-    "note": "XMLHttpRequest is a legacy exception; prefer restructuring in new code"
+  "chaining": {
+    "description": "When acronyms appear adjacent to each other, the result is hard to read. The Web Crypto API handles this by titlecasing all its acronyms (AesCbcParams instead of AESCBCParams). Restructure names to avoid the problem when possible.",
+    "webPlatformExamples": {
+      "RTCDtlsTransport": "RTC + DTLS, titlecased to avoid RTCDTLS",
+      "RTCSctpTransport": "RTC + SCTP, titlecased to avoid RTCSCTP",
+      "RTCRtpSender": "RTC + RTP, titlecased to avoid RTCRTP",
+      "AesCbcParams": "AES + CBC, titlecased to avoid AESCBC",
+      "RsaOaepParams": "RSA + OAEP, titlecased to avoid RSAOAEP"
+    }
   }
 }

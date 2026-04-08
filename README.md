@@ -12,8 +12,6 @@ npm install eslint-plugin-acrocase --save-dev
 
 ## Usage
 
-Add `acrocase` to the plugins section of your ESLint configuration:
-
 ```json
 {
   "plugins": ["acrocase"],
@@ -31,69 +29,54 @@ Or use the recommended config:
 }
 ```
 
-## Rules
+## What it does
 
-### acrocase/acrocase
+The rule enforces that known acronyms retain their uppercase form in camelCase and PascalCase identifiers. It also catches abbreviations that are commonly mistaken for acronyms (like `ID` instead of `Id`).
 
-Enforces that acronyms retain their original casing in identifiers.
-
-#### Correct
+### Correct
 
 ```js
 const imageURL = "https://example.com/img.png";
-const userId = 12345;  // "Id" is an exception
+const userId = 12345;
 element.innerHTML = "<p>Hello</p>";
 data.toJSON();
 
 class HTTPClient {}
-interface APIResponse {}
+class APIResponse {}
 ```
 
-#### Incorrect
+### Incorrect
 
 ```js
-const imageUrl = "https://example.com/img.png";  // Should be imageURL
-const userID = 12345;  // Should be userId (web platform convention)
-data.toJson();  // Should be toJSON
+const imageUrl = "https://example.com/img.png";  // imageURL
+const userID = 12345;                             // userId
+data.toJson();                                    // toJSON
 
-class HttpClient {}  // Should be HTTPClient
-interface ApiResponse {}  // Should be APIResponse
+class HttpClient {}   // HTTPClient
+class ApiResponse {}  // APIResponse
 ```
 
-### Options
+## Options
 
-#### `ignoredIdentifiers`
+### `acronyms`
 
-Array of identifier names to ignore:
+Add project-specific acronyms on top of the built-in dictionary:
 
 ```json
 {
-  "rules": {
-    "acrocase/acrocase": ["error", {
-      "ignoredIdentifiers": ["legacyApiHandler"]
-    }]
-  }
+  "acrocase/acrocase": ["error", {
+    "acronyms": ["GCP", "NATS"]
+  }]
 }
 ```
 
-## Acronyms
+## Auto-fix
 
-The plugin recognizes common web platform acronyms:
+The rule is fixable. Run `eslint --fix` to correct violations automatically.
 
-- API, ASCII, CORS, CSS, DOM, EOF, GPU, HTML, HTTP, HTTPS
-- JSON, MIME, PDF, PNG, RGB, RGBA, RTC, SQL, SSL, SVG
-- TCP, TLS, UDP, UI, URI, URL, USB, UTF, UUID, WebGL, XHR, XML, XSS
+## Dictionary
 
-### Exceptions
-
-Some abbreviations are treated as words per web platform convention:
-
-- **Id** (not ID) - `getElementById`, `userId`
-- **Intl** (not INTL) - `Intl.DateTimeFormat`
-
-## Fixable
-
-This rule is auto-fixable. Run ESLint with `--fix` to automatically correct violations.
+The plugin ships with a [dictionary](https://github.com/brainkim/acrocase/blob/main/dictionary.json) of common acronyms sourced from web platform APIs and general programming. It includes exceptions for abbreviations like `Id` and `Intl` that follow normal casing despite looking like acronyms.
 
 ## License
 
