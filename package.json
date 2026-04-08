@@ -12,7 +12,7 @@
     "develop": "shovel develop src/app.tsx --platform bun",
     "static": "MODE=production shovel build src/app.tsx --platform bun --lifecycle",
     "predeploy": "npm run static",
-    "deploy": "wrangler pages deploy dist/public --project-name acrocase",
+    "deploy": "gh-pages -d dist/public --nojekyll --cname acrocase.org",
     "preview": "bun run static && bunx serve dist/public"
   },
   "keywords": [
@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.0",
-    "typescript": "^5.0.0",
-    "wrangler": "^4.81.0"
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.0.0"
   },
   "repository": {
     "type": "git",
