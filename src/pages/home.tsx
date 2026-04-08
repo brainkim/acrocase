@@ -161,32 +161,16 @@ export function HomePage() {
 					</p>
 
 					<p>
-						ACROCase is camelCase with one additional rule: acronyms keep their casing.
-						Write <code>parseURL</code>, not <code>parseUrl</code>.
-						Write <code>HTMLElement</code>, not <code>HtmlElement</code>.
-						This is how the web platform already works.
+						The web platform has hundreds of APIs that contain acronyms.
+						With remarkable consistency, those acronyms are kept uppercase:
+						<code>innerHTML</code>, <code>XMLDocument</code>, <code>toJSON</code>, <code>encodeURIComponent</code>.
+						ACROCase is simply a name for the convention that already exists.
 					</p>
 
-					<div class="comparison">
-						<div class="do">
-							<h4>ACROCase</h4>
-							<code>parseURL</code><br />
-							<code>toJSON</code><br />
-							<code>innerHTML</code><br />
-							<code>HTMLElement</code>
-						</div>
-						<div class="dont">
-							<h4>Lowercase acronyms</h4>
-							<code>parseUrl</code><br />
-							<code>toJson</code><br />
-							<code>innerHtml</code><br />
-							<code>HtmlElement</code>
-						</div>
-					</div>
-
-					<h2>The Web Platform</h2>
+					<h2>The Evidence</h2>
 					<p>
-						This is not a new convention. The DOM and browser APIs have always preserved acronym casing:
+						Across the DOM, CSS Object Model, and every major browser API, acronyms retain their original casing.
+						This pattern holds whether the acronym appears at the start, middle, or end of an identifier.
 					</p>
 
 					<div class="examples">
@@ -200,68 +184,153 @@ export function HomePage() {
 							<tbody>
 								<tr>
 									<td>HTML</td>
-									<td><code>HTMLElement</code>, <code>innerHTML</code>, <code>outerHTML</code></td>
+									<td><code>HTMLElement</code>, <code>HTMLCollection</code>, <code>innerHTML</code>, <code>outerHTML</code></td>
 								</tr>
 								<tr>
 									<td>CSS</td>
-									<td><code>CSSStyleSheet</code>, <code>CSSRule</code>, <code>CSS.supports()</code></td>
+									<td><code>CSSStyleSheet</code>, <code>CSSRule</code>, <code>CSSStyleDeclaration</code></td>
 								</tr>
 								<tr>
 									<td>DOM</td>
-									<td><code>DOMParser</code>, <code>DOMRect</code>, <code>DOMTokenList</code></td>
-								</tr>
-								<tr>
-									<td>URL</td>
-									<td><code>URL</code>, <code>URLSearchParams</code>, <code>createObjectURL</code></td>
-								</tr>
-								<tr>
-									<td>URI</td>
-									<td><code>encodeURI</code>, <code>encodeURIComponent</code></td>
-								</tr>
-								<tr>
-									<td>JSON</td>
-									<td><code>JSON.parse()</code>, <code>toJSON</code></td>
-								</tr>
-								<tr>
-									<td>XML</td>
-									<td><code>XMLDocument</code>, <code>XMLSerializer</code></td>
+									<td><code>DOMParser</code>, <code>DOMRect</code>, <code>DOMTokenList</code>, <code>DOMException</code></td>
 								</tr>
 								<tr>
 									<td>SVG</td>
-									<td><code>SVGElement</code>, <code>SVGPathElement</code></td>
+									<td><code>SVGElement</code>, <code>SVGPathElement</code>, <code>SVGRectElement</code></td>
+								</tr>
+								<tr>
+									<td>URL</td>
+									<td><code>URL</code>, <code>URLSearchParams</code>, <code>URLPattern</code>, <code>createObjectURL</code></td>
+								</tr>
+								<tr>
+									<td>URI</td>
+									<td><code>encodeURI</code>, <code>decodeURI</code>, <code>encodeURIComponent</code></td>
+								</tr>
+								<tr>
+									<td>JSON</td>
+									<td><code>JSON.parse()</code>, <code>JSON.stringify()</code>, <code>toJSON</code></td>
+								</tr>
+								<tr>
+									<td>XML</td>
+									<td><code>XMLDocument</code>, <code>XMLSerializer</code>, <code>XMLHttpRequest</code></td>
 								</tr>
 								<tr>
 									<td>GPU</td>
-									<td><code>GPUDevice</code>, <code>GPUBuffer</code>, <code>GPUTexture</code></td>
+									<td><code>GPUDevice</code>, <code>GPUBuffer</code>, <code>GPUTexture</code>, <code>GPUAdapter</code></td>
 								</tr>
 								<tr>
 									<td>RTC</td>
-									<td><code>RTCPeerConnection</code>, <code>RTCDataChannel</code></td>
+									<td><code>RTCPeerConnection</code>, <code>RTCDataChannel</code>, <code>RTCSessionDescription</code></td>
 								</tr>
 								<tr>
 									<td>IDB</td>
-									<td><code>IDBDatabase</code>, <code>IDBObjectStore</code></td>
+									<td><code>IDBDatabase</code>, <code>IDBObjectStore</code>, <code>IDBTransaction</code></td>
 								</tr>
 								<tr>
 									<td>USB</td>
-									<td><code>USB</code>, <code>USBDevice</code></td>
+									<td><code>USB</code>, <code>USBDevice</code>, <code>USBConfiguration</code></td>
 								</tr>
 								<tr>
 									<td>HID</td>
-									<td><code>HID</code>, <code>HIDDevice</code></td>
+									<td><code>HID</code>, <code>HIDDevice</code>, <code>HIDConnectionEvent</code></td>
 								</tr>
 								<tr>
 									<td>MIDI</td>
-									<td><code>MIDIAccess</code>, <code>MIDIInput</code></td>
+									<td><code>MIDIAccess</code>, <code>MIDIInput</code>, <code>MIDIOutput</code></td>
+								</tr>
+								<tr>
+									<td>GATT</td>
+									<td><code>BluetoothRemoteGATTServer</code>, <code>BluetoothRemoteGATTService</code></td>
+								</tr>
+								<tr>
+									<td>BYOB</td>
+									<td><code>ReadableStreamBYOBReader</code>, <code>ReadableStreamBYOBRequest</code></td>
+								</tr>
+								<tr>
+									<td>VTT</td>
+									<td><code>VTTCue</code>, <code>VTTRegion</code></td>
+								</tr>
+								<tr>
+									<td>XR</td>
+									<td><code>XRSystem</code>, <code>XRSession</code>, <code>XRFrame</code></td>
+								</tr>
+								<tr>
+									<td>DTMF</td>
+									<td><code>RTCDTMFSender</code>, <code>RTCDTMFToneChangeEvent</code></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 
-					<h2>The Two Variants</h2>
 					<p>
-						Like camelCase and UpperCamelCase, ACROCase has two forms.
-						When an acronym starts an identifier, its casing depends on which form you're using:
+						This is not a handful of cherry-picked examples.
+						There are over a hundred <code>HTML*Element</code> interfaces, over eighty <code>SVG*</code> interfaces, over fifty <code>CSS*</code> interfaces, and over thirty each for <code>GPU*</code>, <code>RTC*</code>, and <code>XR*</code>.
+						The pattern is the default, not the exception.
+					</p>
+
+					<h2>Abbreviations That Are Not Acronyms</h2>
+					<p>
+						Not everything short is an acronym. The web platform draws a clear line
+						between acronyms (which stay uppercase) and abbreviations (which follow normal casing).
+					</p>
+
+					<h3>Id</h3>
+					<p>
+						<code>Id</code> is an abbreviation for "identifier," not an acronym.
+						The DOM uses it consistently: <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>, <code>requestId</code>.
+						Writing <code>userID</code> is wrong by web platform convention.
+					</p>
+
+					<h3>Intl</h3>
+					<p>
+						The Internationalization API is <code>Intl</code>, not <code>INTL</code>.
+						It follows normal PascalCase as an abbreviation, not an acronym.
+					</p>
+
+					<h2>Where the Web Platform Disagrees with Itself</h2>
+					<p>
+						The convention is not perfectly consistent. There is one major area where it breaks down:
+						the Web Crypto API.
+					</p>
+					<p>
+						AES, RSA, HMAC, and SHA are universally recognized as acronyms.
+						But the Web Crypto API titlecases all of them:
+					</p>
+					<ul>
+						<li><code>AesCbcParams</code>, not <code>AESCBCParams</code></li>
+						<li><code>RsaOaepParams</code>, not <code>RSAOAEPParams</code></li>
+						<li><code>HmacKeyGenParams</code>, not <code>HMACKeyGenParams</code></li>
+					</ul>
+					<p>
+						WebRTC does something similar with sub-protocol names:
+					</p>
+					<ul>
+						<li><code>RTCDtlsTransport</code>, not <code>RTCDTLSTransport</code></li>
+						<li><code>RTCRtpSender</code>, not <code>RTCRTPSender</code></li>
+						<li><code>RTCSctpTransport</code>, not <code>RTCSCTPTransport</code></li>
+					</ul>
+					<p>
+						The reason is chaining. When two acronyms appear next to each other,
+						the boundary between them disappears. <code>AESCBC</code> is hard to read.
+						<code>RTCDTLS</code> is worse. Both the Crypto and RTC teams chose to titlecase
+						acronyms that would otherwise chain, sacrificing acronym casing for readability.
+					</p>
+					<p>
+						This is a pragmatic tradeoff, not a rejection of the convention.
+						The Crypto API titlecases <em>all</em> its acronyms for internal consistency,
+						even when chaining is not an issue (like <code>AesKeyGenParams</code>,
+						which could have been <code>AESKeyGenParams</code> without any readability problem).
+						Meanwhile, <code>RTCPeerConnection</code> keeps <code>RTC</code> uppercase because it does
+						not chain with the next word.
+					</p>
+					<p>
+						The lesson: avoid putting acronyms next to each other. When that is unavoidable,
+						titlecasing the second acronym is the established precedent.
+					</p>
+
+					<h2>The Convention</h2>
+					<p>
+						ACROCase is camelCase with one rule: known acronyms keep their uppercase form.
 					</p>
 					<div class="examples">
 						<table>
@@ -279,75 +348,27 @@ export function HomePage() {
 									<td><code>URLString</code></td>
 								</tr>
 								<tr>
-									<td>Acronym in middle</td>
-									<td><code>parseURL</code></td>
-									<td><code>ParseURL</code></td>
+									<td>Acronym at end</td>
+									<td><code>imageURL</code></td>
+									<td><code>ImageURL</code></td>
 								</tr>
 								<tr>
-									<td>Mixed</td>
+									<td>Multiple acronyms</td>
 									<td><code>htmlToJSON</code></td>
 									<td><code>HTMLToJSON</code></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-
-					<h2>Not Acronyms</h2>
 					<p>
-						A few common abbreviations look like acronyms but are not treated as such by the web platform.
-						These follow normal camelCase rules.
-					</p>
-
-					<h3>Id, not ID</h3>
-					<p>
-						The DOM consistently uses <code>Id</code>: <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>.
-						This is not an acronym for "identifier." It is an abbreviation, and it follows normal casing.
-					</p>
-					<div class="comparison">
-						<div class="do">
-							<h4>Correct</h4>
-							<code>userId</code>, <code>getElementById</code>
-						</div>
-						<div class="dont">
-							<h4>Wrong</h4>
-							<code>userID</code>, <code>getElementByID</code>
-						</div>
-					</div>
-
-					<h3>Intl, not INTL</h3>
-					<p>
-						The Internationalization API is <code>Intl</code>, not <code>INTL</code>.
-					</p>
-
-					<h2>Chaining Acronyms</h2>
-					<p>
-						Placing two acronyms next to each other produces identifiers that are hard to parse visually.
-						The web platform has run into this problem and handled it inconsistently.
-					</p>
-					<p>
-						The Web Crypto API titlecases all of its acronyms to avoid sequences
-						like <code>AESCBC</code> or <code>RSAOAEP</code>:
-					</p>
-					<ul>
-						<li><code>AesCbcParams</code> instead of <code>AESCBCParams</code></li>
-						<li><code>RsaOaepParams</code> instead of <code>RSAOAEPParams</code></li>
-						<li><code>HmacKeyGenParams</code> instead of <code>HMACKeyGenParams</code></li>
-					</ul>
-					<p>
-						WebRTC does the same for sub-protocol names:
-					</p>
-					<ul>
-						<li><code>RTCDtlsTransport</code> instead of <code>RTCDTLSTransport</code></li>
-						<li><code>RTCRtpSender</code> instead of <code>RTCRTPSender</code></li>
-					</ul>
-					<p>
-						When naming new code, restructure to avoid the problem.
-						If you must chain acronyms, titlecasing the second one is the established web platform precedent.
+						When an acronym starts a camelCase identifier, it is lowercased
+						like any other first word: <code>urlString</code>, <code>httpRequest</code>, <code>jsonData</code>.
+						In UpperACROCase (PascalCase with acronyms), it stays uppercase: <code>URLString</code>, <code>HTTPRequest</code>, <code>JSONData</code>.
 					</p>
 
 					<h2>ESLint Plugin</h2>
 					<p>
-						Enforce ACROCase automatically with <code>eslint-plugin-acrocase</code>:
+						<code>eslint-plugin-acrocase</code> enforces the convention automatically:
 					</p>
 					<pre><code>{`npm install eslint-plugin-acrocase --save-dev`}</code></pre>
 					<pre><code>{`{
@@ -357,8 +378,9 @@ export function HomePage() {
   }
 }`}</code></pre>
 					<p>
-						The rule is auto-fixable. It ships with a dictionary of common acronyms
-						and can be extended with project-specific ones:
+						The rule is auto-fixable. It ships with a <a href="https://github.com/brainkim/acrocase/blob/main/dictionary.json">dictionary</a> of
+						139 acronyms sourced from web platform APIs and common programming usage.
+						Add project-specific acronyms through configuration:
 					</p>
 					<pre><code>{`{
   "acrocase/acrocase": ["error", {
@@ -367,19 +389,12 @@ export function HomePage() {
 }`}</code></pre>
 					<p>
 						If you use ESLint's built-in <code>camelcase</code> rule, disable it.
-						It enforces lowercase acronyms, which conflicts with ACROCase.
-					</p>
-
-					<h2>Dictionary</h2>
-					<p>
-						A machine-readable <a href="https://github.com/brainkim/acrocase/blob/main/dictionary.json">dictionary.json</a> lists
-						all recognized acronyms with their expansions and web platform usage.
+						It enforces lowercase acronyms, which contradicts the web platform.
 					</p>
 
 					<footer>
 						<p>
-							ACROCase is a naming convention for code that respects the
-							distinction between acronyms and words.
+							ACROCase is a name for a convention the web platform established decades ago.
 						</p>
 					</footer>
 				</main>
