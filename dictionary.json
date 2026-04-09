@@ -101,7 +101,10 @@
       "expansion": "Counter Mode"
     },
     "DB": {
-      "expansion": "Database"
+      "expansion": "Database",
+      "webPlatform": [
+        "indexedDB"
+      ]
     },
     "DFS": {
       "expansion": "Depth-First Search"
