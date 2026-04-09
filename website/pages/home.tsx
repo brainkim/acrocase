@@ -1,3 +1,15 @@
+import dictionary from "../../dictionary.json";
+
+const acronyms = Object.keys(dictionary.acronyms).sort((a, b) => b.length - a.length);
+const acronymPattern = new RegExp(`(${acronyms.join("|")})`, "g");
+
+function Acro({children}: {children: string}) {
+	const parts = children.split(acronymPattern);
+	return <>{parts.map((part) =>
+		acronyms.includes(part) ? <span class="acro">{part}</span> : part
+	)}</>;
+}
+
 export function HomePage() {
 	return (
 		<html lang="en">
@@ -165,138 +177,138 @@ export function HomePage() {
 			</head>
 			<body>
 				<main>
-					<h1><span class="acro">ACRO</span>Case</h1>
+					<h1><Acro>ACROCase</Acro></h1>
 					<p class="tagline">
 						<strong class="acro">A</strong>cronyms <strong class="acro">C</strong>onsistently <strong class="acro">R</strong>etain <strong class="acro">O</strong>riginal <strong>Case</strong>
 					</p>
 
 					<p>
-						The web platform has hundreds of <span class="acro">API</span>s that contain acronyms.
-						With remarkable consistency, those acronyms are kept uppercase:
-						<code>inner<span class="acro">HTML</span></code>, <code><span class="acro">XML</span>Document</code>, <code>to<span class="acro">JSON</span></code>, <code>encode<span class="acro">URI</span>Component</code>.
-						<span class="acro">ACRO</span>Case is a name for this convention, and an <span class="acro">ES</span>Lint plugin to enforce it.
+						<Acro>The web platform has hundreds of APIs that contain acronyms.
+						With remarkable consistency, those acronyms are kept uppercase:</Acro>
+						{" "}<code><Acro>innerHTML</Acro></code>, <code><Acro>XMLDocument</Acro></code>, <code><Acro>toJSON</Acro></code>, <code><Acro>encodeURIComponent</Acro></code>.
+						<Acro>ACROCase is a name for this convention, and an ESLint plugin to enforce it.</Acro>
 					</p>
 
-					<h2>Acronyms in Web <span class="acro">API</span>s</h2>
+					<h2><Acro>Acronyms in Web APIs</Acro></h2>
 
 					<div class="examples">
 						<table>
 							<thead>
 								<tr>
 									<th>Acronym</th>
-									<th>Web platform APIs</th>
+									<th><Acro>Web platform APIs</Acro></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>HTML</td>
-									<td><code>HTMLElement</code>, <code>HTMLCollection</code>, <code>innerHTML</code>, <code>outerHTML</code></td>
+									<td><code><Acro>HTMLElement</Acro></code>, <code><Acro>HTMLCollection</Acro></code>, <code><Acro>innerHTML</Acro></code>, <code><Acro>outerHTML</Acro></code></td>
 								</tr>
 								<tr>
 									<td>CSS</td>
-									<td><code>CSSStyleSheet</code>, <code>CSSRule</code>, <code>CSSStyleDeclaration</code></td>
+									<td><code><Acro>CSSStyleSheet</Acro></code>, <code><Acro>CSSRule</Acro></code>, <code><Acro>CSSStyleDeclaration</Acro></code></td>
 								</tr>
 								<tr>
 									<td>DOM</td>
-									<td><code>DOMParser</code>, <code>DOMRect</code>, <code>DOMTokenList</code>, <code>DOMException</code></td>
+									<td><code><Acro>DOMParser</Acro></code>, <code><Acro>DOMRect</Acro></code>, <code><Acro>DOMTokenList</Acro></code>, <code><Acro>DOMException</Acro></code></td>
 								</tr>
 								<tr>
 									<td>SVG</td>
-									<td><code>SVGElement</code>, <code>SVGPathElement</code>, <code>SVGRectElement</code></td>
+									<td><code><Acro>SVGElement</Acro></code>, <code><Acro>SVGPathElement</Acro></code>, <code><Acro>SVGRectElement</Acro></code></td>
 								</tr>
 								<tr>
 									<td>URL</td>
-									<td><code>URL</code>, <code>URLSearchParams</code>, <code>URLPattern</code>, <code>createObjectURL</code></td>
+									<td><code><Acro>URL</Acro></code>, <code><Acro>URLSearchParams</Acro></code>, <code><Acro>URLPattern</Acro></code>, <code><Acro>createObjectURL</Acro></code></td>
 								</tr>
 								<tr>
 									<td>URI</td>
-									<td><code>encodeURI</code>, <code>decodeURI</code>, <code>encodeURIComponent</code></td>
+									<td><code><Acro>encodeURI</Acro></code>, <code><Acro>decodeURI</Acro></code>, <code><Acro>encodeURIComponent</Acro></code></td>
 								</tr>
 								<tr>
 									<td>JSON</td>
-									<td><code>JSON.parse()</code>, <code>JSON.stringify()</code>, <code>toJSON</code></td>
+									<td><code><Acro>JSON</Acro>.parse()</code>, <code><Acro>JSON</Acro>.stringify()</code>, <code><Acro>toJSON</Acro></code></td>
 								</tr>
 								<tr>
 									<td>XML</td>
-									<td><code>XMLDocument</code>, <code>XMLSerializer</code>, <code>XMLHttpRequest</code></td>
+									<td><code><Acro>XMLDocument</Acro></code>, <code><Acro>XMLSerializer</Acro></code>, <code><Acro>XMLHttpRequest</Acro></code></td>
 								</tr>
 								<tr>
 									<td>GPU</td>
-									<td><code>GPUDevice</code>, <code>GPUBuffer</code>, <code>GPUTexture</code>, <code>GPUAdapter</code></td>
+									<td><code><Acro>GPUDevice</Acro></code>, <code><Acro>GPUBuffer</Acro></code>, <code><Acro>GPUTexture</Acro></code>, <code><Acro>GPUAdapter</Acro></code></td>
 								</tr>
 								<tr>
 									<td>RTC</td>
-									<td><code>RTCPeerConnection</code>, <code>RTCDataChannel</code>, <code>RTCSessionDescription</code></td>
+									<td><code><Acro>RTCPeerConnection</Acro></code>, <code><Acro>RTCDataChannel</Acro></code>, <code><Acro>RTCSessionDescription</Acro></code></td>
 								</tr>
 								<tr>
 									<td>IDB</td>
-									<td><code>IDBDatabase</code>, <code>IDBObjectStore</code>, <code>IDBTransaction</code></td>
+									<td><code><Acro>IDBDatabase</Acro></code>, <code><Acro>IDBObjectStore</Acro></code>, <code><Acro>IDBTransaction</Acro></code></td>
 								</tr>
 								<tr>
 									<td>USB</td>
-									<td><code>USB</code>, <code>USBDevice</code>, <code>USBConfiguration</code></td>
+									<td><code><Acro>USB</Acro></code>, <code><Acro>USBDevice</Acro></code>, <code><Acro>USBConfiguration</Acro></code></td>
 								</tr>
 								<tr>
 									<td>HID</td>
-									<td><code>HID</code>, <code>HIDDevice</code>, <code>HIDConnectionEvent</code></td>
+									<td><code><Acro>HID</Acro></code>, <code><Acro>HIDDevice</Acro></code>, <code><Acro>HIDConnectionEvent</Acro></code></td>
 								</tr>
 								<tr>
 									<td>MIDI</td>
-									<td><code>MIDIAccess</code>, <code>MIDIInput</code>, <code>MIDIOutput</code></td>
+									<td><code><Acro>MIDIAccess</Acro></code>, <code><Acro>MIDIInput</Acro></code>, <code><Acro>MIDIOutput</Acro></code></td>
 								</tr>
 								<tr>
 									<td>GATT</td>
-									<td><code>BluetoothRemoteGATTServer</code>, <code>BluetoothRemoteGATTService</code></td>
+									<td><code><Acro>BluetoothRemoteGATTServer</Acro></code>, <code><Acro>BluetoothRemoteGATTService</Acro></code></td>
 								</tr>
 								<tr>
 									<td>BYOB</td>
-									<td><code>ReadableStreamBYOBReader</code>, <code>ReadableStreamBYOBRequest</code></td>
+									<td><code><Acro>ReadableStreamBYOBReader</Acro></code>, <code><Acro>ReadableStreamBYOBRequest</Acro></code></td>
 								</tr>
 								<tr>
 									<td>VTT</td>
-									<td><code>VTTCue</code>, <code>VTTRegion</code></td>
+									<td><code><Acro>VTTCue</Acro></code>, <code><Acro>VTTRegion</Acro></code></td>
 								</tr>
 								<tr>
 									<td>XR</td>
-									<td><code>XRSystem</code>, <code>XRSession</code>, <code>XRFrame</code></td>
+									<td><code><Acro>XRSystem</Acro></code>, <code><Acro>XRSession</Acro></code>, <code><Acro>XRFrame</Acro></code></td>
 								</tr>
 								<tr>
 									<td>DTMF</td>
-									<td><code>RTCDTMFSender</code>, <code>RTCDTMFToneChangeEvent</code></td>
+									<td><code><Acro>RTCDTMFSender</Acro></code>, <code><Acro>RTCDTMFToneChangeEvent</Acro></code></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 
 					<p>
-						100+ <code><span class="acro">HTML</span>*</code> interfaces. 80+ <code><span class="acro">SVG</span>*</code>. 50+ <code><span class="acro">CSS</span>*</code>.
-						30+ each for <code><span class="acro">GPU</span>*</code>, <code><span class="acro">RTC</span>*</code>, and <code><span class="acro">XR</span>*</code>.
+						100+ <code><Acro>HTML</Acro>*</code> interfaces. 80+ <code><Acro>SVG</Acro>*</code>. 50+ <code><Acro>CSS</Acro>*</code>.
+						30+ each for <code><Acro>GPU</Acro>*</code>, <code><Acro>RTC</Acro>*</code>, and <code><Acro>XR</Acro>*</code>.
 					</p>
 
 					<h2>Not Acronyms</h2>
 					<p>
 						<code>Id</code> is an abbreviation, not an acronym.
-						The <span class="acro">DOM</span> uses <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>.
-						Similarly, the Internationalization <span class="acro">API</span> is <code>Intl</code>, not <code><span class="acro">INTL</span></code>.
+						<Acro>The DOM uses</Acro> <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>.
+						<Acro>Similarly, the Internationalization API is</Acro> <code>Intl</code>, not <code><Acro>INTL</Acro></code>.
 					</p>
 
 					<h2>Chaining</h2>
 					<p>
 						When two acronyms are adjacent, one gets titlecased.
-						<code><span class="acro">XML</span>HttpRequest</code> should be <code><span class="acro">XML</span><span class="acro">HTTP</span>Request</code> by the convention's own logic,
-						but <code><span class="acro">XML</span><span class="acro">HTTP</span></code> is where you lose the boundary.
+						<code><Acro>XMLHttpRequest</Acro></code> should be <code><Acro>XMLHTTPRequest</Acro></code> by the convention's own logic,
+						but <code><Acro>XMLHTTP</Acro></code> is where you lose the boundary.
 					</p>
 					<p>
-						The Web Crypto <span class="acro">API</span> titlecases all its acronyms for the same reason:
+						<Acro>The Web Crypto API titlecases all its acronyms for the same reason:</Acro>
 					</p>
 					<ul>
-						<li><code><span class="acro">AES</span><span class="acro">CBC</span>Params</code> is written <code>AesCbcParams</code></li>
-						<li><code><span class="acro">RSA</span><span class="acro">OAEP</span>Params</code> is written <code>RsaOaepParams</code></li>
+						<li><code><Acro>AESCBCParams</Acro></code> is written <code>AesCbcParams</code></li>
+						<li><code><Acro>RSAOAEPParams</Acro></code> is written <code>RsaOaepParams</code></li>
 					</ul>
 					<p>
-						Web<span class="acro">RTC</span> does the same selectively:
-						<code><span class="acro">RTC</span>DtlsTransport</code>, <code><span class="acro">RTC</span>RtpSender</code>.
-						But not always: <code><span class="acro">RTC</span><span class="acro">DTMF</span>Sender</code> keeps <span class="acro">DTMF</span> uppercase.
+						<Acro>WebRTC does the same selectively:</Acro>
+						{" "}<code><Acro>RTCDtlsTransport</Acro></code>, <code><Acro>RTCRtpSender</Acro></code>.
+						<Acro>But not always:</Acro> <code><Acro>RTCDTMFSender</Acro></code> <Acro>keeps DTMF uppercase.</Acro>
 					</p>
 
 					<h2>The Convention</h2>
@@ -306,30 +318,30 @@ export function HomePage() {
 								<tr>
 									<th></th>
 									<th>acroCase</th>
-									<th>Upper<span class="acro">ACRO</span>Case</th>
+									<th><Acro>UpperACROCase</Acro></th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>Start</td>
 									<td><code>urlString</code></td>
-									<td><code>URLString</code></td>
+									<td><code><Acro>URLString</Acro></code></td>
 								</tr>
 								<tr>
 									<td>End</td>
-									<td><code>imageURL</code></td>
-									<td><code>ImageURL</code></td>
+									<td><code><Acro>imageURL</Acro></code></td>
+									<td><code><Acro>ImageURL</Acro></code></td>
 								</tr>
 								<tr>
 									<td>Multiple</td>
-									<td><code>htmlToJSON</code></td>
-									<td><code>HTMLToJSON</code></td>
+									<td><code><Acro>htmlToJSON</Acro></code></td>
+									<td><code><Acro>HTMLToJSON</Acro></code></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 
-					<h2><span class="acro">ES</span>Lint Plugin</h2>
+					<h2><Acro>ESLint</Acro> Plugin</h2>
 					<pre><code>{`npm install eslint-plugin-acrocase --save-dev`}</code></pre>
 					<pre><code>{`{
   "plugins": ["acrocase"],
@@ -349,7 +361,7 @@ export function HomePage() {
 
 					<footer>
 						<p>
-							<span class="acro">ACRO</span>Case is a name for a convention the web platform established decades ago.
+							<Acro>ACROCase</Acro> is a name for a convention the web platform established decades ago.
 						</p>
 					</footer>
 				</main>
