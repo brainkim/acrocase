@@ -1,6 +1,6 @@
 import dictionary from "../../dictionary.json";
 
-const acronyms = Object.keys(dictionary.acronyms).sort((a, b) => b.length - a.length);
+const acronyms = [...Object.keys(dictionary.acronyms), "ACRO"].sort((a, b) => b.length - a.length);
 const acronymPattern = new RegExp(`(${acronyms.join("|")})`, "g");
 
 function Acro({children}: {children: string}) {
@@ -183,9 +183,8 @@ export function HomePage() {
 					</p>
 
 					<p>
-						<Acro>The web platform has hundreds of APIs that contain acronyms.
-						With remarkable consistency, those acronyms are kept uppercase:</Acro>
-						{" "}<code><Acro>innerHTML</Acro></code>, <code><Acro>XMLDocument</Acro></code>, <code><Acro>toJSON</Acro></code>, <code><Acro>encodeURIComponent</Acro></code>.
+						<Acro>The web platform has hundreds of APIs that contain acronyms. With remarkable consistency, those acronyms are kept uppercase:</Acro>{" "}
+						<code><Acro>innerHTML</Acro></code>, <code><Acro>XMLDocument</Acro></code>, <code><Acro>toJSON</Acro></code>, <code><Acro>encodeURIComponent</Acro></code>.{" "}
 						<Acro>ACROCase is a name for this convention, and an ESLint plugin to enforce it.</Acro>
 					</p>
 
