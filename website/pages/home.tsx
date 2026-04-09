@@ -171,13 +171,13 @@ export function HomePage() {
 					</p>
 
 					<p>
-						The web platform has hundreds of APIs that contain acronyms.
+						The web platform has hundreds of <span class="acro">API</span>s that contain acronyms.
 						With remarkable consistency, those acronyms are kept uppercase:
 						<code>inner<span class="acro">HTML</span></code>, <code><span class="acro">XML</span>Document</code>, <code>to<span class="acro">JSON</span></code>, <code>encode<span class="acro">URI</span>Component</code>.
-						ACROCase is a name for this convention, and an ESLint plugin to enforce it.
+						<span class="acro">ACRO</span>Case is a name for this convention, and an <span class="acro">ES</span>Lint plugin to enforce it.
 					</p>
 
-					<h2>Acronyms in Web APIs</h2>
+					<h2>Acronyms in Web <span class="acro">API</span>s</h2>
 
 					<div class="examples">
 						<table>
@@ -269,34 +269,34 @@ export function HomePage() {
 					</div>
 
 					<p>
-						100+ <code>HTML*</code> interfaces. 80+ <code>SVG*</code>. 50+ <code>CSS*</code>.
-						30+ each for <code>GPU*</code>, <code>RTC*</code>, and <code>XR*</code>.
+						100+ <code><span class="acro">HTML</span>*</code> interfaces. 80+ <code><span class="acro">SVG</span>*</code>. 50+ <code><span class="acro">CSS</span>*</code>.
+						30+ each for <code><span class="acro">GPU</span>*</code>, <code><span class="acro">RTC</span>*</code>, and <code><span class="acro">XR</span>*</code>.
 					</p>
 
 					<h2>Not Acronyms</h2>
 					<p>
 						<code>Id</code> is an abbreviation, not an acronym.
-						The DOM uses <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>.
-						Similarly, the Internationalization API is <code>Intl</code>, not <code>INTL</code>.
+						The <span class="acro">DOM</span> uses <code>getElementById</code>, <code>elementId</code>, <code>clientId</code>.
+						Similarly, the Internationalization <span class="acro">API</span> is <code>Intl</code>, not <code><span class="acro">INTL</span></code>.
 					</p>
 
 					<h2>Chaining</h2>
 					<p>
 						When two acronyms are adjacent, one gets titlecased.
-						<code>XMLHttpRequest</code> should be <code>XMLHTTPRequest</code> by the convention's own logic,
-						but <code>XMLHTTP</code> is where you lose the boundary.
+						<code><span class="acro">XML</span>HttpRequest</code> should be <code><span class="acro">XML</span><span class="acro">HTTP</span>Request</code> by the convention's own logic,
+						but <code><span class="acro">XML</span><span class="acro">HTTP</span></code> is where you lose the boundary.
 					</p>
 					<p>
-						The Web Crypto API titlecases all its acronyms for the same reason:
+						The Web Crypto <span class="acro">API</span> titlecases all its acronyms for the same reason:
 					</p>
 					<ul>
-						<li><code>AesCbcParams</code>, not <code>AESCBCParams</code></li>
-						<li><code>RsaOaepParams</code>, not <code>RSAOAEPParams</code></li>
+						<li><code><span class="acro">AES</span><span class="acro">CBC</span>Params</code> is written <code>AesCbcParams</code></li>
+						<li><code><span class="acro">RSA</span><span class="acro">OAEP</span>Params</code> is written <code>RsaOaepParams</code></li>
 					</ul>
 					<p>
-						WebRTC does the same selectively:
-						<code>RTCDtlsTransport</code>, <code>RTCRtpSender</code>.
-						But not always: <code>RTCDTMFSender</code> keeps <code>DTMF</code> uppercase.
+						Web<span class="acro">RTC</span> does the same selectively:
+						<code><span class="acro">RTC</span>DtlsTransport</code>, <code><span class="acro">RTC</span>RtpSender</code>.
+						But not always: <code><span class="acro">RTC</span><span class="acro">DTMF</span>Sender</code> keeps <span class="acro">DTMF</span> uppercase.
 					</p>
 
 					<h2>The Convention</h2>
@@ -306,7 +306,7 @@ export function HomePage() {
 								<tr>
 									<th></th>
 									<th>acroCase</th>
-									<th>UpperACROCase</th>
+									<th>Upper<span class="acro">ACRO</span>Case</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -329,7 +329,7 @@ export function HomePage() {
 						</table>
 					</div>
 
-					<h2>ESLint Plugin</h2>
+					<h2><span class="acro">ES</span>Lint Plugin</h2>
 					<pre><code>{`npm install eslint-plugin-acrocase --save-dev`}</code></pre>
 					<pre><code>{`{
   "plugins": ["acrocase"],
@@ -349,7 +349,7 @@ export function HomePage() {
 
 					<footer>
 						<p>
-							ACROCase is a name for a convention the web platform established decades ago.
+							<span class="acro">ACRO</span>Case is a name for a convention the web platform established decades ago.
 						</p>
 					</footer>
 				</main>
