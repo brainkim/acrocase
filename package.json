@@ -2,7 +2,10 @@
   "name": "eslint-plugin-acrocase",
   "version": "0.0.1",
   "description": "ESLint plugin to enforce ACROCase naming conventions",
-  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./dictionary": "./dictionary.json"
+  },
   "files": [
     "src",
     "dictionary.json"
